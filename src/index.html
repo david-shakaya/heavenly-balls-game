@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шарики</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet" />
+  
+   
+  <!-- <link rel="stylesheet" href="./css/styles.css"> -->
+  <!-- <link rel="stylesheet" href="./node_modules/basiclightbox/dist/basicLightbox.min.css"> -->
+
+</head>
+<body>
+  
+  <!-- <audio autoplay src="./images/02865.mp3"></audio -->
+  <!-- <bgsound src="./images/02865.mp3" loop="100" volume="50" balance="0" /> -->
+  <div class="container">
+    <header class="header">
+      <p class="descr-rules">Постарайся продержаться в игре 30 секунд. На старте у тебя есть 5 секунд до конца игры, каждый шарик +1 секунда.</p>
+      <div class="wrapper-header-element">
+
+        <ul class="menu-list">
+          <li>
+            <button class="btn menu-btn-start" type="button">start</button>
+          </li>
+          <li>
+            <button class="btn menu-btn-stop" type="button">stop</button>
+          </li>
+        </ul>
+        <div class="header-wrapper">
+          <ul>
+            <li>
+              <p class="header-text-title">Оставшееся время</p>
+              <span class="span-text header-text-time">05</span>
+            </li>
+            <li>
+              <p>Счет</p>
+              <span class="span-text header-text-points">0</span>
+            </li>
+            <li>
+              <p>Время в игре</p>
+              <!-- <div id="app"></div> СКОПИР ТАЙМЕР -->
+              <span class="span-text timer">00</span>
+            </li>
+          </ul>
+        </div>
+        <div class="wrapper-list-players">
+          <h2>Таблица рекордов</h2>
+          <ul class=" list-players">
+
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="game-area">
+          <span class="span-js"></span>
+        <div class="wrapper-game-area">
+        <div class="satic-area">
+          <div class="dynamic-area1"></div>
+          <div class="dynamic-area2"></div>
+        </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- //Модалка добавить открытие по завершению игры -->
+    <div class="backdrop js-backdrop">
+      <div class="modal">
+        <form action="" class="form-action">
+          <h3>Не плохо!!!</h3>
+          <p class="points-result-js"></p>
+          <p>Напиши имя и попади в историю!</p>
+          <input type="text" class="input-js">
+          <button type="submit" class="btn btn-submit">Ок</button>
+
+          <button type="button" class="close-btn">
+            <svg width="25px" height="25px">
+              <use class="icon-close-menu-svg" href="./images/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- <template id="modal">
+    <div class="modal">
+       
+    </div>
+</template> -->
+
+  
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #212121;
+}
+
+ul,
+h1,
+h2,
+h3 {
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  list-style: none;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.descr-rules {
+  margin-bottom: 14px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.btn:hover {
+  background-color: #2bbbad;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.wrapper-header-element {
+  display: flex;
+  align-items: center;
+}
+
+.menu-list {
+  display: inherit;
+}
+.menu-list > li {
+  margin-right: 50px;
+}
+
+.header-wrapper > ul {
+  display: flex;
+  margin-right: 27px;
+}
+
+.header-wrapper > ul > li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.wrapper-game-area {
+  position: relative;
+  border: black solid 2px;
+  border-bottom: white solid 60px;
+  width: 700px;
+  height: 400px;
+  background-color: transparent;
+  background-image: url('./images/sky.jpg');
+}
+.list-static-frog {
+  display: flex;
+}
+
+/* .list-static-frog > div:not(:last-child) {
+  margin-right: 50px;
+} */
+.box-red-js {
+  position: absolute;
+
+  /* transform: translate(10px, 402px); */
+
+  width: 55px;
+  height: 55px;
+  background-image: url(./images/b1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.move {
+  position: absolute;
+  margin: 12px;
+  transition: 2000ms cubic-bezier(0, 0, 0, 0);
+  z-index: 2;
+  width: 55px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.move-green {
+  position: absolute;
+  margin: 12px;
+  transition: 2000ms cubic-bezier(0, 0.42, 0.6, 0.7);
+  z-index: 2;
+  width: 55px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.box-blue-js {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background: url(./images/b4.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.move-blue {
+  position: absolute;
+  margin: 12px;
+  transition: 1000ms cubic-bezier(0, 0.42, 0.6, 0.7);
+  z-index: 2;
+  width: 55px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* __ */
+.box-purple-js {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background: url(./images/b6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.move-purple {
+  position: absolute;
+  margin: 12px;
+  transition: 2000ms cubic-bezier(0, 0, 0, 0.7);
+  z-index: 2;
+  width: 55px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* __ */
+
+.box-green-js {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background-image: url(./images/b5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.span-js {
+  font-size: 10px;
+  text-shadow: 1px 1px 1px silver, -1px 1px 1px silver;
+  color: white;
+  transition: all 0.05s;
+}
+
+.text-animation-js {
+  position: absolute;
+
+  z-index: 10;
+  font-size: 40px;
+  text-shadow: -1px -1px 1px rgb(197, 194, 194), 1px -1px 1px silver;
+  color: rgb(39, 39, 39);
+}
+
+.span-text {
+  display: block;
+  height: 25px;
+  width: 50px;
+  font-size: 18px;
+  border: solid 1px gray;
+  background-color: rgb(228, 228, 228);
+}
+.header-text-time {
+  transition: 01s;
+  background-color: rgb(182, 255, 186);
+}
+
+.danger {
+  transition: 01s;
+  background-color: rgb(255, 60, 60);
+}
+/* .safely {
+  transition: 01s;
+  background-color: rgb(182, 255, 186);
+} */
+
+.modal {
+  padding: 10px;
+  width: 550px;
+  max-width: 1300px;
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  display: flex;
+  position: absolute;
+  transform: translate(30px, -30px);
+  top: 16px;
+  right: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: transparent;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #fff;
+  background-color: #2196f3;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+svg:hover {
+  fill: #fff;
+}
+
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+body.show-modal .modal {
+  transform: scale(1);
+}
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+.modal {
+  padding: 24px;
+  border-radius: 4px;
+  max-width: 450px;
+  width: 100%;
+  min-height: 200;
+
+  background-color: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
+}
+
+.description-footer {
+  width: 750px;
+  position: absolute;
+  transform: translate(36px, -62px);
+}
+
+/* НЕБО */
+
+.top-header {
+  padding: 1em 0 1em;
+  letter-spacing: -1px;
+  text-align: center;
+}
+.top-header h1 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0;
+  text-shadow: 2px 5px rgba(0, 0, 0, 0.1);
+}
+.top-header h1 span {
+  display: block;
+  font-size: 60%;
+  font-weight: 400;
+  padding: 0.8em 0 0.5em 0;
+  color: #fff;
+}
+/*stop. Header */
+
+.satic-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(./images/sky.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.dynamic-area1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(./images/poster-drop-animate2.png) repeat-x 0px 0px;
+  background-size: cover;
+  -webkit-animation: posterDrop1 6000s linear infinite;
+  -moz-animation: posterDrop1 6000s linear infinite;
+  -o-animation: posterDrop1 6000s linear infinite;
+  animation: posterDrop1 6000s linear infinite;
+}
+
+@-webkit-keyframes posterDrop1 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 4000% 0;
+  }
+}
+@-moz-keyframes posterDrop1 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 4000% 0;
+  }
+}
+@-o-keyframes posterDrop1 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 4000% 0;
+  }
+}
+@keyframes posterDrop1 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 4000% 0;
+  }
+}
+
+.dynamic-area2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(./images/poster-drop-animate1.png) repeat-x 0px 0px;
+  background-size: cover;
+  -webkit-animation: posterDrop2 8000s linear infinite;
+  -moz-animation: posterDrop2 8000s linear infinite;
+  -o-animation: posterDrop2 8000s linear infinite;
+  animation: posterDrop2 8000s linear infinite;
+}
+@-webkit-keyframes posterDrop2 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 30000% 0;
+  }
+}
+@-moz-keyframes posterDrop2 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 30000% 0;
+  }
+}
+@-o-keyframes posterDrop2 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 30000% 0;
+  }
+}
+@keyframes posterDrop2 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 30000% 0;
+  }
+}
+
+/* тайьер */
+/* 
+.base-timer {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+.base-timer__path-remaining.red {
+  color: red;
+}
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+} */

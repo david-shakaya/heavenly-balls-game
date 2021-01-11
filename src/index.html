@@ -1,97 +1,107 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Шарики</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
-    rel="stylesheet" />
-  
-   
-  <!-- <link rel="stylesheet" href="./css/styles.css"> -->
-  <!-- <link rel="stylesheet" href="./node_modules/basiclightbox/dist/basicLightbox.min.css"> -->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мастерская: табы</title>
 </head>
+
 <body>
-  
-  <!-- <audio autoplay src="./images/02865.mp3"></audio -->
-  <!-- <bgsound src="./images/02865.mp3" loop="100" volume="50" balance="0" /> -->
-  <div class="container">
-    <header class="header">
-      <p class="descr-rules">Постарайся продержаться в игре 30 секунд. На старте у тебя есть 5 секунд до конца игры, каждый шарик +1 секунда.</p>
-      <div class="wrapper-header-element">
+  <div class="tabs" id="tabs-1">
+    <div class="controls" data-controls>
+      <a href="#apple" class="controls__item">🍎 Яблоко</a>
+      <a href="#grapes" class="controls__item">🍇 Виноград</a>
+      <a href="#peach" class="controls__item">🍑 Персик</a>
+    </div>
 
-        <ul class="menu-list">
-          <li>
-            <button class="btn menu-btn-start" type="button">start</button>
-          </li>
-          <li>
-            <button class="btn menu-btn-stop" type="button">stop</button>
-          </li>
-        </ul>
-        <div class="header-wrapper">
-          <ul>
-            <li>
-              <p class="header-text-title">Оставшееся время</p>
-              <span class="span-text header-text-time">05</span>
-            </li>
-            <li>
-              <p>Счет</p>
-              <span class="span-text header-text-points">0</span>
-            </li>
-            <li>
-              <p>Время в игре</p>
-              <!-- <div id="app"></div> СКОПИР ТАЙМЕР -->
-              <span class="span-text timer">00</span>
-            </li>
-          </ul>
-        </div>
-        <div class="wrapper-list-players">
-          <h2>Таблица рекордов</h2>
-          <ul class=" list-players">
-
-          </ul>
-        </div>
+    <div class="panes" data-panes>
+      <div class="pane" id="apple">
+        <h2 class="pane__fruit">🍎</h2>
+        <p class="pane__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          debitis exercitationem quas rerum maxime libero aut molestiae
+          assumenda, odit explicabo quo ex nulla voluptate minima eveniet
+          velit ullam itaque iure ipsa dolores, iusto tempora et! Mollitia
+          sunt necessitatibus nostrum placeat voluptatibus consequuntur
+          inventore sed incidunt eius nesciunt modi.
+        </p>
       </div>
-    </header>
-    <main class="main">
-      <section class="game-area">
-          <span class="span-js"></span>
-        <div class="wrapper-game-area">
-        <div class="satic-area">
-          <div class="dynamic-area1"></div>
-          <div class="dynamic-area2"></div>
-        </div>
-        </div>
-      </section>
-    </main>
 
+      <div class="pane" id="grapes">
+        <h2 class="pane__fruit">🍇</h2>
+        <p class="pane__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          debitis exercitationem quas rerum maxime libero aut molestiae
+          assumenda, odit explicabo quo ex nulla voluptate minima eveniet
+          velit ullam itaque iure ipsa dolores, iusto tempora et! Mollitia
+          sunt necessitlkm.ml lm.,l;
+          ;lm,l/ 
+          klm.atibus nostrum placeat voluptatibus consequuntur
+          inventore sed incidunt eius nesciunt modi.
+        </p>
+      </div>
 
-    <!-- //Модалка добавить открытие по завершению игры -->
-    <div class="backdrop js-backdrop">
-      <div class="modal">
-        <form action="" class="form-action">
-          <h3>Не плохо!!!</h3>
-          <p class="points-result-js"></p>
-          <p>Напиши имя и попади в историю!</p>
-          <input type="text" class="input-js">
-          <button type="submit" class="btn btn-submit">Ок</button>
-
-          <button type="button" class="close-btn">
-            <svg width="25px" height="25px">
-              <use class="icon-close-menu-svg" href="./images/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-        </form>
+      <div class="pane" id="peach">
+        <h2 class="pane__fruit">🍑</h2>
+        <p class="pane__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          debitis exercitationem quas rerum maxime libero aut molestiae
+          assumenda, odit explicabo quo ex nulla voluptate minima eveniet
+          velit ullam itaque iure ipsa dolores, iusto tempora et! Mollitia
+          sunt necessitatibus nostrum placeat voluptatibus consequuntur
+          inventore sed incidunt eius nesciunt modi.
+        </p>
       </div>
     </div>
-    <!-- <template id="modal">
-    <div class="modal">
-       
-    </div>
-</template> -->
+  </div>
 
-  
+  <!-- <div class="tabs" id="tabs-2">
+    <div class="controls" data-controls>
+      <a href="#pig" class="controls__item">🐷 Свинка</a>
+      <a href="#robot" class="controls__item">🤖 Робот</a>
+      <a href="#facepalm" class="controls__item">🤦‍♀️ Рукалицо</a>
+    </div>
+
+    <div class="panes" data-panes>
+      <div class="pane" id="pig">
+        <h2 class="pane__fruit">🐷</h2>
+        <p class="pane__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          debitis exercitationem quas rerum maxime libero aut molestiae
+          assumenda, odit explicabo quo ex nulla voluptate minima eveniet
+          velit ullam itaque iure ipsa dolores, iusto tempora et! Mollitia
+          sunt necessitatibus nostrum placeat voluptatibus consequuntur
+          inventore sed incidunt eius nesciunt modi.
+        </p>
+      </div>
+
+      <div class="pane" id="robot">
+        <h2 class="pane__fruit">🤖</h2>
+        <p class="pane__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          debitis exercitationem quas rerum maxime libero aut molestiae
+          assumenda, odit explicabo quo ex nulla voluptate minima eveniet
+          velit ullam itaque iure ipsa dolores, iusto tempora et! Mollitia
+          sunt necessitatibus nostrum placeat voluptatibus consequuntur
+          inventore sed incidunt eius nesciunt modi.
+        </p>
+      </div>
+
+      <div class="pane" id="facepalm">
+        <h2 class="pane__fruit">🤦‍♀️</h2>
+        <p class="pane__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+          debitis exercitationem quas rerum maxime libero aut molestiae
+          assumenda, odit explicabo quo ex nulla voluptate minima eveniet
+          velit ullam itaque iure ipsa dolores, iusto tempora et! Mollitia
+          sunt necessitatibus nostrum placeat voluptatibus consequuntur
+          inventore sed incidunt eius nesciunt modi.
+        </p>
+      </div>
+    </div>
+  </div> -->
+  <!-- <script src="./tabs-plugin.js"></script> -->
 </body>
 
 </html>

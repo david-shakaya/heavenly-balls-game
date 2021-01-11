@@ -26,3 +26,37 @@ function onControlsClick(e) {
     }
     curentPanes.classList.add('pane--active')
 }
+
+
+
+// МАГАЗИН
+
+const listFruts = document.querySelector('.list-item-fruts');
+const basket = document.querySelector('.basket-js');
+const shoppingList = document.querySelector('.shopping-list');
+let count = 1
+
+listFruts.addEventListener('click', onFrutsClick)
+
+let frutArr = []
+function onFrutsClick(e) {
+    if (e.target.nodeName !== 'P') {
+        return
+    }
+    const curentFrut = e.path[1].childNodes[1]
+
+    const isAdded = frutArr.includes(curentFrut.textContent)
+    frutArr.push(curentFrut.textContent)
+
+    
+    if (!isAdded) {
+        shoppingList.insertAdjacentHTML('beforeend', `<li class="shopping-list-item"><span>${curentFrut.textContent}
+         - Количество ${count} </span></li>`)
+    }
+    count+=1
+    //  shoppingList.insertAdjacentHTML('beforeend', `<li class="shopping-list-item"><span>${curentFrut.textContent}
+    //      - Количество ${count} </span></li>`)
+    // const addedFrut = document.querySelector('.shopping-list-item'); 
+    // addedFrut.insertAdjacentHTML('beforeend', `<p class="text-caunt"></p>`)
+    
+}

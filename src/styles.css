@@ -89,7 +89,7 @@ li {
   border: 1px rgb(112, 112, 112) solid;
 }
 
-li:hover p {
+p:hover {
   font-size: 14px;
 }
 
@@ -101,10 +101,14 @@ h1 {
 }
 li p {
   text-align: center;
+  border: 1px gray solid;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .basket-js {
   position: absolute;
+  z-index: 2;
   top: 28px;
   right: 42px;
   width: 35px;
@@ -112,4 +116,15 @@ li p {
   border-bottom: 2px black solid;
   border-left: 2px black solid;
   border-right: 2px black solid;
+}
+
+.basket-js:hover {
+  width: 40px;
+  height: 40px;
+  top: 26px;
+  right: 36px;
+}
+
+.shopping-list-item {
+  width: fit-content;
 }

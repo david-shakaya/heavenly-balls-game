@@ -4,10 +4,10 @@ const refs = {
     controls: document.querySelector('#tabs-1 [data-controls]'),
     panes: document.querySelector('[data-panes]'),
 }
-refs.controls.addEventListener('click', addClass)
+refs.controls.addEventListener('click', onControlsClick)
 
 
-function addClass(e) {
+function onControlsClick(e) {
     if (e.target.nodeName !== 'A') {
         return
     }
@@ -25,9 +25,4 @@ function addClass(e) {
         itemActivePane.classList.remove('pane--active')
     }
     curentPanes.classList.add('pane--active')
-
-    
-
-    
-
 }

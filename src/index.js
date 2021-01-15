@@ -119,11 +119,13 @@ const totalPrice =document.querySelector('.total-price-js');
 
 
 
+let num =0
 
 listFruts.addEventListener('click', onFrutsClick)
 let added =false
 let clicked = false
 function onFrutsClick(e) {
+
     added = false
     if (e.target.nodeName !== 'P') {
         return
@@ -131,16 +133,7 @@ function onFrutsClick(e) {
     
     const curentFrut = e.path[1].childNodes[1].textContent
     const curentPrice = e.path[1].childNodes[0].textContent.split(" ")[0]
-   
-//     const quantityMarkup =document.querySelector('.quantity');
-//    let curentQuantity = cart.getItems().find(el => {
-//         if(el.name === curentFrut)
-//       return el.quantity   
-//    })
-   
-    
-    
-    // console.log(curentQuantity);
+     
 
     const towar = cart.getItems().forEach(el => {
                 if (el.name === curentFrut) {
@@ -149,45 +142,35 @@ function onFrutsClick(e) {
    })
  
     const markup = cart.abb({ name: `${curentFrut}`, price: `${+curentPrice.split(" ")[0]}` });
+      const fin = cart.items.find(el => {
+    if (curentFrut === el.name) {
+      return el
+  }
+//        console.log(curentFrut);
+//        console.log(el.name);
+ })
+  console.log(fin.quantity);
     
-    
-    if (!added) {
+  if (!added) {
+      num+=1
         shoppingList.insertAdjacentHTML('beforeend', `<li class="shopping-list-item"><span>${curentFrut}Цена ${curentPrice} грн.
-        </span></li>`)
-        added = false
-        console.log(added);
+        </span></li><div class="div-q" data-num="${num}"></div>`)
+    added = false
+    
+  } else {
+    
+    // Чуш полнейшая переписать с Шаблонизатором и будет счастье
+      const divQ = document.querySelectorAll('.div-q')
+    divQ.forEach(el => {
+        el.textContent = fin.quantity
+      // }
+      })
+      // divQ
     }
-    totalPrice.innerHTML = `<p>- Всего к оплате ${cart.totalPrice()}грн </p>`
+  totalPrice.innerHTML = `<p>- Всего к оплате ${cart.totalPrice()}грн </p>`
+  
+ 
 
-    
-    // console.log(cart.totalPrice());
-
-    // const isAdded = cart.getItems().includes(curentFrut)
-    // console.log(isAdded);
-    // frutArr.push(curentFrut.textContent)
-
-    
-    // let data = +curentFrut.getAttribute('data-quantity')
-    // curentFrut.setAttribute("data-quantity", `${count(data)}`);
-    // console.log(data);
-
-
-    
-        // console.log(curentFrut.getAttribute('data-quantity'));
-    //  else {
-    //     // c += 1
-    //     const qwe = document.querySelector(`.shopping-list-item${c}`);
-    //     console.log('from else qwe'+ qwe);
-    //      qwe.innerHTML =`<span>
-    //      - Количество ${count(data)} </span>`
-    // }
-
-    // ещет текст контент лишки и спана и сравнимвает их если они равны то data +1
-    //  shoppingList.insertAdjacentHTML('beforeend', `<li class="shopping-list-item"><span>${curentFrut.textContent}
-    //      - Количество ${count} </span></li>`)
-    // const addedFrut = document.querySelector('.shopping-list-item'); 
-    // addedFrut.insertAdjacentHTML('beforeend', `<p class="text-caunt"></p>`)
     
 }
-
 

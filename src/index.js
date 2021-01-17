@@ -88,7 +88,7 @@ const listFruts = document.querySelector('.list-item-fruts');
 // const shoppingList = document.querySelector('.shopping-list');
 // const totalPrice = document.querySelector('.total-price-js');
 
-console.log(storage);
+
 const arr = listFruts.children
   
 
@@ -120,23 +120,96 @@ ulRef.addEventListener('click', (e) => {
   
 
   cart.abb(FindIdCurrentEl());
+
+          // cart.items.forEach(function (el) {
+          // console.log('ELEMENT TES' + el.name);
+          //   if (el.quantity > 0) {
+
+          //     const heading = document.createElement('p');
+          //     heading.textContent = `${el.name} - ${el.quantity}`;
+
+            
+          //     // divName.innerHTML += `<p>${el.name} - ${el.quantity}</p>`
+
+              
+          //   }
+  
+              //  const heading = document.createElement('p');
+              // heading.textContent = `${el.name} - ${el.quantity}`;
+
+const markup =cart.items.reduce(
+  (acc, el) => acc +  `<p>${el.name}-${el.quantity}</p>`,
+  ''
+  )
+  divName.innerHTML = markup;
+
+
  
-  if (FindIdCurrentEl().quantity === 1) {
+  if (FindIdCurrentEl().quantity > 0) {
 
-    const mar = cartTemplate(storage)
-    divName.innerHTML = mar
-    // ulQuRef.insertAdjacentHTML('beforeend', `<p>вы добаили ${FindIdCurrentEl().name}</p>`)
-    // // divName.insertAdjacentHTML('beforeend', `<p>количество ${FindIdCurrentEl().quantity}</p>`)
-    //  divName.innerHTML = `<p>количество ${FindIdCurrentEl().quantity}</p>`
+/*     const mar = cartTemplate(storage)
+    divName.innerHTML = mar */
 
-  } else {
-     const mar = cartTemplate(storage)
-    divName.innerHTML = mar
-    // divName.innerHTML = `<p>количество ${FindIdCurrentEl().quantity}</p>`
-    //  divName.insertAdjacentHTML('beforeend', `<p>количество ${FindIdCurrentEl().quantity}</p>`)
+
+
+  /*    const quantityAfterAdd = document.querySelectorAll('.quantity');
+    const nameProductAfterAdd = document.querySelectorAll('.name-product')
+     quantityAfterAdd.forEach(el => {
+       if (+el.textContent === 0) {
+         el.classList.add('displ-none')
+       }
+       }) */
+ 
+      //  nameProductAfterAdd.forEach(el => {
+      //        el.classList.add('displ-none')
+      //      })
+    // const mapArr = storage.find(el => {
+    //   if (el.quantity > 0) {
+    //     return el
+    //   }
+    // })
+
+
+
+    // console.log(mapArr);
+
   }
 
+  
+  // else {
+       
+  //    const mar = cartTemplate(storage)
+  //   divName.innerHTML = mar
+  //      const quantityAfterAdd = document.querySelectorAll('.quantity');
+  //   const nameProductAfterAdd = document.querySelectorAll('.name-product')
+  //    quantityAfterAdd.forEach(el => {
+  //      if (+el.textContent === 0) {
+  //        el.classList.add('displ-none')
+  //      }
+  //    })
+    
+  //    nameProductAfterAdd.forEach(el => {
+  //            el.classList.add('displ-none')
+  //          })
+    // divName.innerHTML = `<p>количество ${FindIdCurrentEl().quantity}</p>`
+    //  divName.insertAdjacentHTML('beforeend', `<p>количество ${FindIdCurrentEl().quantity}</p>`)
+  // }
 
+  // const quantityAfterAdd = document.querySelectorAll('.quantity');
+  // const nameProductAfterAdd = document.querySelectorAll('.name-product')
+  //   quantityAfterAdd.forEach(el => {
+  //     if (+el.textContent === 0) {
+  //          el.classList.add('displ-none')
+  //          nameProductAfterAdd.forEach(el => {
+  //            el.classList.add('displ-none')
+  //          })
+  //        } else {
+  //         //  nameProductAfterAdd.classList.remove('displ-none')
+  //          nameProductAfterAdd.forEach(el => {
+  //            el.classList.remove('displ-none')
+  //          })
+  //     }
+  //   })
 
 
  

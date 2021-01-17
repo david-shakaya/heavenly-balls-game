@@ -128,3 +128,7 @@ li p {
 .shopping-list-item {
   width: fit-content;
 }
+
+.displ-none {
+  display: none;
+}

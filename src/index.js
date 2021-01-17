@@ -58,6 +58,14 @@ const cart = {
     product.quantity = 1;
     this.items.push(product);
   },
+  minusResidue(prod) {
+     for (const item of this.items) {
+      if (prod.name === item.name) {
+        return (item.residue -=1);
+      }
+    }
+    this.items.push(prod);
+  },
   // - 4) - remove(productName) - Создаем медот(функцию) которая удаляет продукт из корзины. Мы проверяем: productName === this.items[i].name(productName равно тому имени который уже есть в корзине товаров).
   // Если такое имя есть то удаляет его. this.items.splice(i, 1);
   remove(productName) {
@@ -97,6 +105,7 @@ ulRef.addEventListener('click', (e) => {
   if (e.target.nodeName !== 'BUTTON' ) {
     return
   }
+
 const getIdCurrentElInDom = () => e.path[2].getAttribute('id')
  const FindIdCurrentEl =()=> storage.find(el => {
    if (el.id === +getIdCurrentElInDom()) {
@@ -104,10 +113,20 @@ const getIdCurrentElInDom = () => e.path[2].getAttribute('id')
    }
  })
   
+  cart.minusResidue(FindIdCurrentEl())// реализовать метод минус количество
   cart.abb(FindIdCurrentEl());
 
+  
+
+  console.log(cart.minusResidue(FindIdCurrentEl()));
+  console.log(cart.items);
+
 const markup =cart.items.reduce(
-  (acc, el) => acc +  `<div class="wrapper-elem" id="${el.name}"><button class="btn-remove-elem" id="${el.name}">X</button><p>${el.name}-${el.quantity}</p></div>`,
+  (acc, el) => acc + `
+  <div class="wrapper-elem" id="${el.name}">
+  <button class="btn-remove-elem" id="${el.name}">X</button>
+  <p>${el.name}  -  ${el.quantity} шт.</p>
+  </div>`,
   ''
   )
 
@@ -121,28 +140,24 @@ const markup =cart.items.reduce(
   const wrapperElem =document.querySelectorAll('.wrapper-elem');
 
   btnRemoveElem.forEach(el => {
-    console.log(el.attributes[1].nodeValue);
+
     el.addEventListener('click', fnRemove)
 
-    function fnRemove() {
-      cart.remove(el.attributes[1].nodeValue)
-      deliteDiv(el.attributes[1].nodeValue)
+    function fnRemove(e) {
+      console.log(e);
+      cart.remove(el.getAttribute('id'))
+      deliteDiv(el.getAttribute('id'))
       ulQuRef.innerHTML = `Общая сумма ${cart.totalPrice()} грн.`
       
     }
   })
 
   const deliteDiv = (id) => wrapperElem.forEach(el => {
-    console.log('ID'+ el.getAttribute('id'));
     if (id === el.getAttribute('id')) {
       el.remove()
-      console.log('ID'+ el.getAttribute('id'));
    }
   })
  
- 
-
-
 })
 
 

@@ -107,29 +107,40 @@ const getIdCurrentElInDom = () => e.path[2].getAttribute('id')
   cart.abb(FindIdCurrentEl());
 
 const markup =cart.items.reduce(
-  (acc, el) => acc +  `<button class="btn-remove-elem" id="${el.name}">X</button><p>${el.name}-${el.quantity}</p>`,
+  (acc, el) => acc +  `<div class="wrapper-elem" id="${el.name}"><button class="btn-remove-elem" id="${el.name}">X</button><p>${el.name}-${el.quantity}</p></div>`,
   ''
   )
-  divName.innerHTML = markup;
-  ulQuRef.innerHTML =  `Общая сумма ${cart.totalPrice()} грн.`
+
+  ulQuRef.innerHTML = `Общая сумма ${cart.totalPrice()} грн.`
+   divName.innerHTML = markup;
   // console.log('вы добаили' + FindIdCurrentEl().name);
 
 
 
   const btnRemoveElem = document.querySelectorAll('.btn-remove-elem');
+  const wrapperElem =document.querySelectorAll('.wrapper-elem');
+
   btnRemoveElem.forEach(el => {
     console.log(el.attributes[1].nodeValue);
     el.addEventListener('click', fnRemove)
-    function fnRemove() {
-      
-      cart.remove(el.attributes[1].nodeValue)
-      // divName.innerHTML = markup;
-      ulQuRef.innerHTML =  `Общая сумма ${cart.totalPrice()} грн.`
 
+    function fnRemove() {
+      cart.remove(el.attributes[1].nodeValue)
+      deliteDiv(el.attributes[1].nodeValue)
+      ulQuRef.innerHTML = `Общая сумма ${cart.totalPrice()} грн.`
+      
     }
   })
- 
 
+  const deliteDiv = (id) => wrapperElem.forEach(el => {
+    console.log('ID'+ el.getAttribute('id'));
+    if (id === el.getAttribute('id')) {
+      el.remove()
+      console.log('ID'+ el.getAttribute('id'));
+   }
+  })
+ 
+ 
 
 
 })
